@@ -10,7 +10,7 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $messages = Message::all();
+        $messages = Message::paginate(5);
 
         return view('welcome',[
             'messages' => $messages

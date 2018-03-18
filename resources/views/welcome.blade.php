@@ -29,6 +29,11 @@
         No hay mensajes
     </p>
     @endforelse
+    @if(count($messages))
+    <div class="text-center">
+        {{ $messages->links() }}
+    </div>
+    @endif
     </div>
     <div class="col-3">
         <form action="messages/create" method="POST">
