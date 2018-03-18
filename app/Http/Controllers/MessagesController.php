@@ -10,7 +10,6 @@ class MessagesController extends Controller
 {
     public function show(Message $message)
     {
-        //$message = Message::find($id);
 
         return view('message.show',[
             'message' => $message
