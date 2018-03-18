@@ -12,6 +12,15 @@
     </nav>
 </div>
 <div class="row">
+    <div class="col-12">
+        <form action="messages/create" method="POST">
+            <div class="form-group">
+                <input type="text" name="message" class="form-control" placeholder="¿Qué estás pensando?">
+                {{ csrf_field() }}
+            </div>
+            <button class="btn btn-primary" type="submit">Guardar</button>
+        </form>
+    </div>
     @forelse($messages as $message)
     <div class="col-6">
         <img src="{{ $message->image }}" alt="" class="img-thumbnail">
