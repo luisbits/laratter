@@ -12,18 +12,18 @@
     </nav>
 </div>
 <div class="row">
-    <div class="col-6">
     @forelse($messages as $message)
-        <img src="{{ $message['image'] }}" alt="" class="img-thumbnail">
+    <div class="col-6">
+        <img src="{{ $message->image }}" alt="" class="img-thumbnail">
         <p class="card-text">
-            {{ $message['content'] }}
-            <a href="/messages/{{ $message['id'] }}">Leer más</a>
+            {{ $message->content }}
+            <a href="/messages/{{ $message->id }}">Leer más</a>
         </p>
+    </div>
     @empty
     <p class="text-center">
         No hay mensajes
     </p>
     @endforelse
-    </div>
 </div>
 @endsection
