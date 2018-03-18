@@ -19,6 +19,11 @@ class MessagesController extends Controller
 
     public function create(CreateMessageRequest $request)
     {
-        dd($request->all());
+        $message = Message::create([
+            'content' => $request->input('message'),
+            'image' => 'https://placeimg.com/640/480/any'
+        ]);
+
+        return redirect('messages/'.$message->id);
     }
 }
