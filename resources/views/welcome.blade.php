@@ -15,10 +15,15 @@
     <div class="col-12">
         <form action="messages/create" method="POST">
             <div class="form-group">
-                <input type="text" name="message" class="form-control" placeholder="¿Qué estás pensando?">
+                <input type="text" name="message" class="form-control @if($errors->has('message')){{ 'is-invalid' }} @endif)" placeholder="¿Qué estás pensando?">
+                @if($errors->has('message'))
+                    @foreach($errors->get('message') as $error)
+                    <div class="invalid-feedback">{{ $error }}</div>
+                    @endforeach 
+                @endif
                 {{ csrf_field() }}
             </div>
-            <button class="btn btn-primary" type="submit">Guardar</button>
+            <button class="btn btn-primary pull-right" type="submit">Guardar</button>
         </form>
     </div>
     @forelse($messages as $message)

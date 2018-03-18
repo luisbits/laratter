@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Http\Requests\CreateMessageRequest;
 use App\Message;
 
 class MessagesController extends Controller
@@ -17,7 +17,7 @@ class MessagesController extends Controller
         ]);
     }
 
-    public function create(Request $request)
+    public function create(CreateMessageRequest $request)
     {
         dd($request->all());
     }
