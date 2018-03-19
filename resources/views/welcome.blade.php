@@ -4,16 +4,7 @@
 <div class="row">
     <div class="col-9">
     @forelse($messages as $message)
-    <div class="card bg-light mb-3">
-        <div class="card-header">{{ $message->id }}</div>
-        <div class="card-body">
-            <img src="{{ $message->image }}" alt="" class="img-thumbnail">
-            <p class="card-text">
-                {{ $message->content }}
-            </p>
-            <a href="/messages/{{ $message->id }}">Leer más</a>
-        </div>
-    </div>
+    @include('message.message')
     @empty
     <p class="text-center">
         No hay mensajes
