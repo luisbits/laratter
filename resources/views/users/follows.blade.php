@@ -2,7 +2,7 @@
 
 @section('content')
 <ul>
-    @foreach($user->follows as $follow)
+    @foreach($follows as $follow)
     <li>{{ $follow->username }}</li>
     @endforeach
 </ul>
