@@ -1,9 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-<ul>
+<ul class="list-group">
     @foreach($follows as $follow)
-    <li>{{ $follow->username }}</li>
+    <li class="list-group-item">
+        <a href="/{{ $follow->username }}">
+            {{ $follow->username }}
+        </a>
+    </li>
     @endforeach
 </ul>
 @endsection
